@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard · ShowMeSteps</title>
+    <link rel="stylesheet" href="/static/dashboard/dashboard.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <div>
+          <p class="eyebrow">ShowMeSteps</p>
+          <h1>Creator dashboard</h1>
+          <p class="lede">
+            Manage tutorials, share links, and see how learners are doing.
+          </p>
+        </div>
+        <div id="auth-box" class="auth-box">
+          <input id="api-base" type="url" value="http://localhost:8000" />
+          <input id="email" type="email" placeholder="Email" />
+          <input id="password" type="password" placeholder="Password" />
+          <button id="login-btn" type="button">Log in</button>
+        </div>
+      </header>
+
+      <nav id="nav" class="nav hidden">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/teams">Teams</a>
+        <a href="/review">Review editor</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/docs" target="_blank" rel="noreferrer">API docs</a>
+        <button id="logout-btn" class="linkish" type="button">Log out</button>
+      </nav>
+
+      <p id="banner" class="banner hidden" role="status"></p>
+
+      <section id="summary" class="summary-grid hidden"></section>
+      <section id="list" class="list hidden"></section>
+    </div>
+    <script src="/static/dashboard/dashboard.js"></script>
+  </body>
+</html>

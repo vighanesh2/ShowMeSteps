@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tutorial · ShowMeSteps</title>
+    <link rel="stylesheet" href="/static/learn/learn.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <p class="eyebrow">ShowMeSteps</p>
+        <h1 id="title">Loading…</h1>
+        <p id="summary" class="summary"></p>
+        <div class="cta-row">
+          <a id="launch-btn" class="btn primary hidden" href="#">Start guided tutorial</a>
+          <button id="copy-btn" class="btn secondary hidden" type="button">Copy link</button>
+        </div>
+        <p id="hint" class="hint">
+          Install the ShowMeSteps Chrome extension first. Starting the tutorial opens the
+          website and highlights each step for you.
+        </p>
+      </header>
+
+      <p id="banner" class="banner" role="status">Loading tutorial…</p>
+
+      <ol id="steps" class="steps"></ol>
+    </div>
+    <script src="/static/learn/learn.js"></script>
+  </body>
+</html>

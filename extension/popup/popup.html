@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ShowMeSteps</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand">ShowMeSteps</div>
+      <p class="tagline">Record a task. Guide someone through it.</p>
+    </header>
+
+    <section id="guide-section" class="panel">
+      <div class="divider" style="margin-top:0">Follow a tutorial</div>
+      <label class="field">
+        <span>API URL</span>
+        <input id="api-base" type="url" placeholder="http://localhost:8000" />
+      </label>
+      <label class="field">
+        <span>Share link or slug</span>
+        <input
+          id="guide-slug"
+          type="text"
+          placeholder="http://localhost:8000/t/my-tutorial-abc123"
+        />
+      </label>
+      <div class="actions">
+        <button id="guide-start-btn" class="btn guide" type="button">
+          Start Guide
+        </button>
+        <button id="guide-stop-btn" class="btn stop" type="button" disabled>
+          Stop Guide
+        </button>
+      </div>
+      <div class="status-card">
+        <div class="status-label">Status</div>
+        <div id="status-text">Idle</div>
+        <div id="counts" class="muted"></div>
+      </div>
+    </section>
+
+    <section id="auth-section" class="panel">
+      <div class="divider" style="margin-top:0">Creator login</div>
+      <label class="field">
+        <span>Email</span>
+        <input id="email" type="email" autocomplete="username" />
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <input id="password" type="password" autocomplete="current-password" />
+      </label>
+      <button id="login-btn" class="btn primary" type="button">Log in</button>
+    </section>
+
+    <section id="record-section" class="panel hidden">
+      <div class="user-row">
+        <span id="user-email" class="muted"></span>
+        <button id="logout-btn" class="btn ghost" type="button">Log out</button>
+      </div>
+
+      <label class="field">
+        <span>Tutorial title</span>
+        <input
+          id="tutorial-title"
+          type="text"
+          maxlength="200"
+          placeholder="e.g. How to invite a teammate"
+        />
+      </label>
+
+      <div class="actions">
+        <button id="start-btn" class="btn record" type="button">
+          Start Recording
+        </button>
+        <button id="stop-btn" class="btn stop" type="button" disabled>
+          Stop Recording
+        </button>
+      </div>
+
+      <p class="hint">
+        Passwords are never stored. After publish, share
+        <code>/t/&lt;slug&gt;</code> so learners can launch the guide.
+      </p>
+    </section>
+
+    <p id="error" class="error hidden" role="alert"></p>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

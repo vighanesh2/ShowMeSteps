@@ -1,0 +1,31 @@
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.form-row input {
+  flex: 1 1 220px;
+}
+
+.member-row,
+.assign-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.member-row:last-child,
+.assign-row:last-child {
+  border-bottom: 0;
+}
+
+.inline-form {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}

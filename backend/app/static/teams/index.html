@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teams · ShowMeSteps</title>
+    <link rel="stylesheet" href="/static/dashboard/dashboard.css" />
+    <link rel="stylesheet" href="/static/teams/teams.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <div>
+          <p class="eyebrow">ShowMeSteps</p>
+          <h1>Teams</h1>
+          <p class="lede">
+            Create a business team, invite employees, and assign tutorials.
+          </p>
+        </div>
+        <div id="auth-box" class="auth-box">
+          <input id="api-base" type="url" value="http://localhost:8000" />
+          <input id="email" type="email" placeholder="Email" />
+          <input id="password" type="password" placeholder="Password" />
+          <button id="login-btn" type="button">Log in</button>
+        </div>
+      </header>
+
+      <nav id="nav" class="nav hidden">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/teams">Teams</a>
+        <a href="/privacy">Privacy</a>
+        <button id="logout-btn" class="linkish" type="button">Log out</button>
+      </nav>
+
+      <p id="banner" class="banner hidden" role="status"></p>
+
+      <section id="workspace" class="hidden">
+        <div class="card" style="margin-bottom:14px">
+          <h2 class="card-title">Create team</h2>
+          <div class="form-row">
+            <input id="team-name" type="text" maxlength="120" placeholder="Acme Onboarding" />
+            <button id="create-team" class="primary" type="button">Create</button>
+          </div>
+        </div>
+
+        <div id="my-assignments" class="card" style="margin-bottom:14px">
+          <h2 class="card-title">Assigned to me</h2>
+          <div id="assignment-list" class="muted">Loading…</div>
+        </div>
+
+        <div id="teams-list" class="list"></div>
+      </section>
+    </div>
+    <script src="/static/teams/teams.js"></script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy · ShowMeSteps</title>
+    <link rel="stylesheet" href="/static/dashboard/dashboard.css" />
+  </head>
+  <body>
+    <div class="page">
+      <p class="eyebrow">ShowMeSteps</p>
+      <h1>Privacy</h1>
+      <p class="lede">
+        How we handle recordings, learner attempts, and team data.
+      </p>
+
+      <article class="card" style="margin-top:20px">
+        <h2 class="card-title">What we store</h2>
+        <p class="muted">
+          Tutorial content, redacted interaction recordings, screenshots (with passwords masked),
+          learner attempt results, and team membership for business accounts.
+        </p>
+        <h2 class="card-title" style="margin-top:16px">What we don’t store</h2>
+        <p class="muted">
+          Passwords and sensitive form values are redacted during recording. Error monitoring is
+          configured not to send personal data (PII) by default.
+        </p>
+        <h2 class="card-title" style="margin-top:16px">Your controls</h2>
+        <ul class="muted">
+          <li>Team admins can hide member emails from non-admins</li>
+          <li>Retention windows for attempt data (purge expired)</li>
+          <li>Toggle AI coaching features per team</li>
+          <li>API: <code>/api/privacy/preferences</code> and delete/purge endpoints</li>
+        </ul>
+        <p style="margin-top:16px">
+          <a class="btn primary" href="/dashboard">Back to dashboard</a>
+          <a class="btn ghost" href="/teams">Teams</a>
+        </p>
+      </article>
+    </div>
+  </body>
+</html>

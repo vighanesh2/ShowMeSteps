@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review tutorial · ShowMeSteps</title>
+    <link rel="stylesheet" href="/static/review/review.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <div>
+          <p class="eyebrow">ShowMeSteps</p>
+          <h1>Review your tutorial</h1>
+          <p class="lede">
+            Edit the AI draft, check screenshots, then save or publish.
+          </p>
+          <p class="lede" style="margin-top:8px">
+            <a href="/dashboard" style="color:var(--accent);font-weight:650;text-decoration:none">← Back to dashboard</a>
+          </p>
+        </div>
+        <div id="auth-box" class="auth-box">
+          <input id="api-base" type="url" placeholder="API URL" value="http://localhost:8000" />
+          <input id="email" type="email" placeholder="Email" />
+          <input id="password" type="password" placeholder="Password" />
+          <button id="login-btn" type="button">Log in</button>
+        </div>
+      </header>
+
+      <p id="banner" class="banner hidden" role="status"></p>
+
+      <section id="picker" class="meta hidden">
+        <h2 style="margin:0;font-family:var(--display);font-size:1.4rem">Your tutorials</h2>
+        <p style="margin:0;color:var(--muted);font-size:13px">
+          Pick one to edit, set success criteria, or review learner attempts.
+        </p>
+        <div id="tutorial-list" class="attempts"></div>
+      </section>
+
+      <section id="editor" class="editor hidden">
+        <div class="meta">
+          <label>
+            Title
+            <input id="title" type="text" maxlength="200" />
+          </label>
+          <label>
+            Summary
+            <textarea id="description" rows="2"></textarea>
+          </label>
+        </div>
+
+        <ol id="steps" class="steps"></ol>
+
+        <div class="meta" style="margin-top:16px">
+          <h2 style="margin:0;font-family:var(--display);font-size:1.4rem">Success criteria</h2>
+          <p style="margin:0;color:var(--muted);font-size:13px">
+            What “done” means for learners. Auto-filled on publish; edit anytime.
+          </p>
+          <label>
+            Success definition
+            <textarea id="success-definition" rows="2" placeholder="e.g. Open the Deji channel page"></textarea>
+          </label>
+          <label>
+            Verification mode
+            <select id="verify-mode">
+              <option value="steps_only">Steps only</option>
+              <option value="page_check">Page check (URL / element)</option>
+              <option value="api">API check</option>
+              <option value="file">Uploaded evidence file</option>
+              <option value="manual">Always manual review</option>
+            </select>
+          </label>
+          <label>
+            URL must contain
+            <input id="url-contains" type="text" placeholder="/results or /@channel" />
+          </label>
+          <label>
+            <span style="display:flex;gap:8px;align-items:center;text-transform:none;letter-spacing:normal">
+              <input id="manual-fallback" type="checkbox" checked />
+              Send failed auto-checks to manual review
+            </span>
+          </label>
+          <div class="footer-actions" style="margin:0;box-shadow:none;border:0;padding:0;background:transparent">
+            <button id="autofill-criteria" class="secondary" type="button">Auto-fill from steps</button>
+            <button id="save-criteria" class="primary" type="button">Save criteria</button>
+          </div>
+        </div>
+
+        <div class="meta" style="margin-top:16px">
+          <h2 style="margin:0;font-family:var(--display);font-size:1.4rem">Learner attempts</h2>
+          <p style="margin:0;color:var(--muted);font-size:13px">
+            Pass, retry, or leave pending when automatic verification is unsure.
+          </p>
+          <div id="attempts" class="attempts"></div>
+          <button id="refresh-attempts" class="secondary" type="button">Refresh attempts</button>
+        </div>
+
+        <div class="footer-actions">
+          <button id="save-draft" class="secondary" type="button">Save draft</button>
+          <button id="publish" class="primary" type="button">Save &amp; publish</button>
+        </div>
+      </section>
+    </div>
+    <script src="/static/review/review.js"></script>
+  </body>
+</html>
